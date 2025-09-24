@@ -1,6 +1,3 @@
-docker run -p 3000:3000 \
-
-
 This is the front-end for the Siron Client Assist project. It is built using Next.js and TypeScript.
 
 ## Getting Started
