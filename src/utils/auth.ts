@@ -37,9 +37,6 @@ export async function refreshAccessToken(token: JWT) {
 
     return token;
   } catch (error) {
-    // eslint-disable-next-line no-console
-    console.log("Failed to refresh token", error);
-
     throw new Error("Failed to refresh token");
   }
 }

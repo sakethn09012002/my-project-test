@@ -13,7 +13,7 @@ import ClientProviders from "./ClientProviders";
 import Providers from "./Providers";
 
 export const metadata: Metadata = {
-  title: "Siron®One :: License Manager",
+  title: "Siron®One :: Client Assist",
 };
 
 export default function RootLayout({
