@@ -15,7 +15,6 @@ import Providers from "./Providers";
 export const metadata: Metadata = {
   title: "Siron®One :: Client Assist",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{

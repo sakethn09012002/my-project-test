@@ -1,0 +1,33 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    container_name: keycloak
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HOSTNAME: http://localhost:8081
+      KC_HOSTNAME_BACKENDCHANNEL_DYNAMIC: true
+    ports:
+      - "8081:8080"
+    networks:
+      - siron-client-assist-network
+
+  frontend:
+    image: siron-client-assist
+    container_name: siron-client-assist-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      AUTH_SECRET: "cs-tooling"
+      AUTH_OIDC_ISSUER: "http://keycloak:8081/realms/siron-client-assist"
+      AUTH_OIDC_CLIENT_ID: "siron-client-assist-fe"
+      AUTH_OIDC_CLIENT_SECRET: "qMyx9Z4KhtThVwDnz7WmzeQsweu9wDu1"
+      AUTH_TRUST_HOST: "true"
+    depends_on:
+      - keycloak
+    networks:
+      - siron-client-assist-network
+
+networks:
+  siron-client-assist-network:
+    driver: bridge
