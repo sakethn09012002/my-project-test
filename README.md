@@ -37,12 +37,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 This frontend connects to the Siron Client Assist Backend.
 
-You can find the backend repository and setup instructions here:
-Siron Client Assist Backend
+You can find the backend repository here and follow the setup instructions:
+https://github.com/imtf-group/siron-client-assist-backend
 
 Make sure to set the API_URL environment variable in your .env.local file or Docker run command so the frontend can reach the backend.
-For example:
 
+For example:
 API_URL=http://localhost:8080/api
 
 Once both frontend and backend are running, the application will be fully functional.
