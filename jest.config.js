@@ -1,23 +1,17 @@
 module.exports = {
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
+  setupFilesAfterEnv: ['<rootDir>/setupTests.ts'], // keep your setup if needed
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '\\.(css|scss|sass)$': 'identity-obj-proxy',
-    '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/tests/__mocks__/fileMock.js'
+    '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/tests/__mocks__/fileMock.js',
   },
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest', // uses Babel for modern JSX transform
   },
   transformIgnorePatterns: [
     '/node_modules/(?!(next|@mui|@imtf|lodash-es)/)',
   ],
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.json',
-      useESM: false,
-    },
-  },
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'],
   coverageDirectory: 'coverage',
