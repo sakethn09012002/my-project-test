@@ -7,10 +7,10 @@ module.exports = {
     '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/tests/__mocks__/fileMock.js',
   },
   transform: {
-    '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest', // uses Babel for modern JSX transform
+    '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest', // uses Babel for modern JSX/TS
   },
   transformIgnorePatterns: [
-    '/node_modules/(?!(next|@mui|@imtf|lodash-es)/)',
+    '/node_modules/(?!(next|@mui|@imtf|lodash-es|react-error-boundary)/)',
   ],
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{ts,tsx}', '!src/**/*.d.ts'],
