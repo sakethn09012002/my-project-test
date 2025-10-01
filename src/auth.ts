@@ -25,11 +25,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       if (account?.access_token) {
         const parsedToken = parseJwt(account.access_token);
 
-        // Extract the roles from the token
-        // Please note that the `resource_access` key is specific to Keycloak
-        const { roles } = (
-          parsedToken.resource_access as Record<string, { roles: string[] }>
-        )[process.env.AUTH_OIDC_CLIENT_ID!];
+        // Use a runtime guard in case the token doesn't include resource_access
+        const resourceAccess =
+          (parsedToken.resource_access as Record<string, { roles: string[] }>) ||
+          undefined;
+
+        const roles =
+          resourceAccess?.[process.env.AUTH_OIDC_CLIENT_ID!]?.roles ?? [];
 
         return {
           ...token,
