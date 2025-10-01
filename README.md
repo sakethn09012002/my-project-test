@@ -1,4 +1,4 @@
-##Backend Connection
+# Backend Connection
  
 This frontend connects to the Siron Client Assist Backend.
  
@@ -17,19 +17,19 @@ The frontend and backend must use the same Keycloak realm and clients.
 
 
  
-##Keycloak Configuration
+# keycloak Configuration
  
 The frontend uses Keycloak for authentication. 
 
 Key points:
  
-Realm – must match the backend realm.
+**Realm**– must match the backend realm.
  
-Frontend Client – a client in the same realm, configured for public or confidential access depending on your setup.
+**Frontend Client** – a client in the same realm, configured for public or confidential access depending on your setup.
  
-Client Secret – needed if the frontend client is confidential.
+**Client Secret** – needed if the frontend client is confidential.
  
-Issuer URL – points to the Keycloak realm, e.g., http://localhost:8080/realms/siron-client-assist.
+**Issuer URL** – points to the Keycloak realm, e.g., http://localhost:8080/realms/siron-client-assist.
  
 The frontend uses these Keycloak settings via environment variables:
 ```
@@ -41,7 +41,7 @@ AUTH_TRUST_HOST
 ```
 
 
-Environment Variables
+**Environment Variables**
  
 The project includes a dummy .env file. Copy it to .env.local and update it with your values:
 ```
@@ -59,7 +59,7 @@ AUTH_TRUST_HOST=true
 ```
 
 
-##Getting Started
+# Getting Started
  
 You can build the project with Docker by running the following command:
  
@@ -79,7 +79,7 @@ docker run -p 3000:3000 \
 ```
 
 
-##Development
+# Development
  
 Copy the dummy .env file and update it:
 ```
