@@ -45,7 +45,7 @@ docker run -p 3000:3000 \
 -e AUTH_OIDC_CLIENT_ID=your_client_id \
 -e AUTH_OIDC_CLIENT_SECRET=your_client_secret \
 -e AUTH_TRUST_HOST=true \
--e API_URL=http://localhost:8080/api \
+-e API_URL=http://localhost:9098/api \
 --name siron-client-assist-fe siron-client-assist-fe-image
 ```
 
@@ -60,34 +60,35 @@ cp .env .env.local
 ```
 **Step 2: Update .env.local Values
 Update the Keycloak and backend connection values as shown below:**
+> ```
+> AUTH_SECRET=cs-tooling          # No need to change this value
+> 
+> AUTH_OIDC_ISSUER=(Issuer URL)   # Get from your Keycloak realm
+> 
+> AUTH_OIDC_CLIENT_ID=            # Get from your Keycloak client
+> 
+> AUTH_OIDC_CLIENT_SECRET=        # Get from your Keycloak client
+> 
+> AUTH_TRUST_HOST=true            # No need to change this value
+> 
+> API_URL=                        # Your backend API URL
+> ```
 
-```
-AUTH_SECRET=cs-tooling          # No need to change this value
-
-AUTH_OIDC_ISSUER=(Issuer URL)   # Get from your Keycloak realm
-
-AUTH_OIDC_CLIENT_ID=            # Get from your Keycloak client
-
-AUTH_OIDC_CLIENT_SECRET=        # Get from your Keycloak client
-
-AUTH_TRUST_HOST=true            # No need to change this value
-
-API_URL=                        # Your backend API URL
-```
 Example:
-```
-AUTH_SECRET=cs-tooling
+> ```
+> AUTH_SECRET=cs-tooling
+> 
+> AUTH_OIDC_ISSUER=http://localhost:8080/realms/siron-client-assist
+> 
+> AUTH_OIDC_CLIENT_ID=siron-client-assist-fe
+> 
+> AUTH_OIDC_CLIENT_SECRET=VwiUXGpeTceeWITekU8ci3AZanifgvuq
+> 
+> AUTH_TRUST_HOST=true
+> 
+> API_URL=http://localhost:9098/api
+> ```
 
-AUTH_OIDC_ISSUER=http://localhost:8080/realms/siron-client-assist
-
-AUTH_OIDC_CLIENT_ID=siron-client-assist-fe
-
-AUTH_OIDC_CLIENT_SECRET=VwiUXGpeTceeWITekU8ci3AZanifgvuq
-
-AUTH_TRUST_HOST=true
-
-API_URL=http://localhost:9098/api
-```
 
 **Step 3: Install Dependencies**
 ```
@@ -103,7 +104,7 @@ Once the server starts, open your browser and navigate to:
 http://localhost:3000
 
 **Notes:**
-```
+
 1.Start the backend and Keycloak before running the frontend.
 
 2.Ensure frontend, backend, and Keycloak are configured under the same realm.
@@ -113,9 +114,8 @@ Realm Settings → OpenID Endpoint Configuration → issuer
 
 4.Default ports:
 
-    Frontend: 3000
+ Frontend: 3000
 
-    Keycloak: 8080
+Keycloak: 8080
 
-    Backend: 9098
-```
+Backend: 9098
