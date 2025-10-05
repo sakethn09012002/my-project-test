@@ -1,5 +1,10 @@
 # Getting Started
 
+## Overview
+
+This project includes the Client Assist Frontend (FE), which is designed to connect with the Client Assist Backend (BE).
+Currently, the frontend and backend can be run independently, but in future updates, the frontend will be configured to communicate directly with the backend via REST APIs.
+
 ## Backend Connection
 
 This frontend connects to the **Client Assist Backend**, so you must start the backend service **before running the frontend**.
