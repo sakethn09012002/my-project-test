@@ -1,10 +1,10 @@
 module.exports = {
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/setupTests.ts'], // keep your setup if needed
+  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'], 
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '\\.(css|scss|sass)$': 'identity-obj-proxy',
-    '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/tests/__mocks__/fileMock.js',
+  '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/src/__mocks__/fileMock.js',
   },
   transform: {
     '^.+\\.(ts|tsx|js|jsx)$': 'babel-jest', // uses Babel for modern JSX/TS
