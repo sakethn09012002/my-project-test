@@ -39,10 +39,12 @@ You can build and run the frontend project using Docker.
 
 ### Build the Docker Image
 ```
-docker build -t siron-client-web-ui-image .
+docker build -t siron-client-assist-web-ui-image .
 ```
 
-Run the Docker Container
+### Run the Docker Container :
+
+**For Linux/macOS :**
 ```
 docker run -p 3000:3000 \
 -e AUTH_SECRET=your_secret \
@@ -51,7 +53,18 @@ docker run -p 3000:3000 \
 -e AUTH_OIDC_CLIENT_SECRET=your_client_secret \
 -e AUTH_TRUST_HOST=true \
 -e API_URL=http://localhost:9098/api \
---name siron-client-assist-fe siron-client-assist-fe-image
+--name siron-client-assist-web-ui siron-client-assist-web-ui-image
+```
+**For Windows powerShell :**
+```
+docker run -p 3000:3000 ^
+-e AUTH_SECRET=your_secret ^
+-e AUTH_OIDC_ISSUER=http://localhost:8080/realms/your_realm ^
+-e AUTH_OIDC_CLIENT_ID=your_client_id ^
+-e AUTH_OIDC_CLIENT_SECRET=your_client_secret ^
+-e AUTH_TRUST_HOST=true ^
+-e API_URL=http://localhost:9098/api ^
+--name siron-client-assist-web-ui siron-client-assist-web-ui-image
 ```
 
 Replace the placeholder values (your_realm, your_client_id, etc.) with your actual Keycloak configuration and Backend API URL.
