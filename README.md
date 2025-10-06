@@ -39,7 +39,7 @@ You can build and run the frontend project using Docker.
 
 ### Build the Docker Image
 ```
-docker build -t siron-client-assist-fe-image .
+docker build -t siron-client-web-ui-image .
 ```
 
 Run the Docker Container
@@ -66,7 +66,7 @@ cp .env .env.local
 **Step 2: Update .env.local Values
 Update the Keycloak and backend connection values as shown below:**
 > ```
-> AUTH_SECRET=cs-tooling          # No need to change this value
+> AUTH_SECRET=client-assist       # No need to change this value
 > 
 > AUTH_OIDC_ISSUER=(Issuer URL)   # Get from your Keycloak realm
 > 
@@ -81,7 +81,7 @@ Update the Keycloak and backend connection values as shown below:**
 
 Example:
 > ```
-> AUTH_SECRET=cs-tooling
+> AUTH_SECRET=client-assist
 > 
 > AUTH_OIDC_ISSUER=http://localhost:8080/realms/siron-client-assist
 > 
