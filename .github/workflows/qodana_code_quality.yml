@@ -30,13 +30,11 @@ jobs:
 
       - name: Install dependencies and build
         run: |
-          cd client-assist-web-ui
           npm ci
           npm run build
 
       - name: Run tests with coverage
         run: |
-          cd client-assist-web-ui
           npm test -- --coverage
 
       - name: Copy Jest coverage for Qodana
