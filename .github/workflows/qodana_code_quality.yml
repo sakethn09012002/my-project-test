@@ -39,8 +39,9 @@ jobs:
 
       - name: Copy Jest coverage for Qodana
         run: |
-          mkdir -p client-assist-web-ui/.qodana/code-coverage
-          cp client-assist-web-ui/coverage/lcov.info client-assist-web-ui/.qodana/code-coverage/
+          mkdir -p .qodana/code-coverage
+          cp coverage/lcov.info .qodana/code-coverage/
+        working-directory: client-assist-web-ui
 
       - name: Qodana Scan
         uses: JetBrains/qodana-action@v2025.2
