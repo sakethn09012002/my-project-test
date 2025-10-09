@@ -41,10 +41,7 @@ jobs:
         run: |
           echo "Current directory: $(pwd)"
           echo "Listing repo root:"
-          ls -al
           echo "Listing frontend folder:"
-          ls -al client-assist-web-ui
-          echo "Listing coverage folder:"
 
 
       - name: Copy Jest coverage for Qodana
