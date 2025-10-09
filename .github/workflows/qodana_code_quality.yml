@@ -36,12 +36,23 @@ jobs:
       - name: Run tests with coverage
         run: |
           npm test -- --coverage
+      
+      - name: Debug paths
+        run: |
+          echo "Current directory: $(pwd)"
+          echo "Listing repo root:"
+          ls -al
+          echo "Listing frontend folder:"
+          ls -al client-assist-web-ui
+          echo "Listing coverage folder:"
+          ls -al client-assist-web-ui/coverage
+
 
       - name: Copy Jest coverage for Qodana
         run: |
-          mkdir -p .qodana/code-coverage
-          cp coverage/lcov.info .qodana/code-coverage/
-        working-directory: client-assist-web-ui
+          mkdir -p client-assist-web-ui/.qodana/code-coverage
+          cp client-assist-web-ui/coverage/lcov.info client-assist-web-ui/.qodana/code-coverage/
+
 
       - name: Qodana Scan
         uses: JetBrains/qodana-action@v2025.2
