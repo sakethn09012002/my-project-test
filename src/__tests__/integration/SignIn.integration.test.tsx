@@ -43,7 +43,7 @@ describe('SignIn Integration', () => {
     fireEvent.click(screen.getByRole('button', { name: /sign in/i }));
 
     await waitFor(() => {
-      expect(signIn).toHaveBeenCalled();
+      expect(signIn).toHaveBeenCalledTimes(1);
     });
   });
 });
