@@ -36,13 +36,6 @@ jobs:
       - name: Run tests with coverage
         run: |
           npm test -- --coverage
-      
-      - name: Debug paths
-        run: |
-          echo "Current directory: $(pwd)"
-          echo "Listing repo root:"
-          echo "Listing frontend folder:"
-
 
       - name: Copy Jest coverage for Qodana
         run: |
