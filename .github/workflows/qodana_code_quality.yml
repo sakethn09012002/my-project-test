@@ -45,20 +45,18 @@ jobs:
           echo "Listing frontend folder:"
           ls -al client-assist-web-ui
           echo "Listing coverage folder:"
-          ls -al client-assist-web-ui/coverage
 
 
       - name: Copy Jest coverage for Qodana
         run: |
-          mkdir -p client-assist-web-ui/.qodana/code-coverage
-          cp client-assist-web-ui/coverage/lcov.info client-assist-web-ui/.qodana/code-coverage/
-
+          mkdir -p .qodana/code-coverage
+          cp coverage/lcov.info .qodana/code-coverage/
 
       - name: Qodana Scan
         uses: JetBrains/qodana-action@v2025.2
         with:
           pr-mode: true
-          project-dir: ./client-assist-web-ui
+          project-dir: .
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN_87015170 }}
           QODANA_ENDPOINT: 'https://qodana.cloud'
