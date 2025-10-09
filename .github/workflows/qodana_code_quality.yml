@@ -26,13 +26,15 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install
-        working-directory: ./client-assist-web-ui
+      - name: Install dependencies and build
+        run: |
+          npm ci
+          npm run build
+        working-directory: client-assist-web-ui
 
       - name: Run tests with coverage
-        run: npm run coverage
-        working-directory: ./client-assist-web-ui
+        run: npm test -- --coverage
+        working-directory: client-assist-web-ui
 
       - name: Archive coverage data
         uses: actions/upload-artifact@v4
