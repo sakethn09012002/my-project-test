@@ -131,3 +131,5 @@ http://localhost:3000
 Trying out semantic release version .
 This is example readme file .
 Trying with major release.
+
+Trial for major release with feat ! 
