@@ -127,7 +127,3 @@ npm run dev
 Once the server starts, open your browser and navigate to:
 http://localhost:3000
 
-**Notes:**
-
-Trying out semantic release version .
-This is example readme file .
