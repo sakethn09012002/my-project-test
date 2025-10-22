@@ -1,4 +1,4 @@
-name: Qodana
+name: Qodana (Disabled)
 
 on:
   workflow_dispatch:
