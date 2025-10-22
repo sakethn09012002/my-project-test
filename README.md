@@ -128,8 +128,18 @@ Once the server starts, open your browser and navigate to:
 http://localhost:3000
 
 **Notes:**
-Trying out semantic release version .
-This is example readme file .
-Trying with major release.
 
-Trial for major release with feat ! 
+1.Start the backend and Keycloak before running the frontend.
+
+2.Ensure frontend, backend, and Keycloak are configured under the same realm.
+
+3.You can verify the issuer URL in Keycloak under:
+Realm Settings → OpenID Endpoint Configuration → issuer
+
+4.Default ports:
+
+ Frontend: 3000
+
+Keycloak: 8080
+
+Backend: 9098
