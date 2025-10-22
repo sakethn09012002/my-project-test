@@ -130,4 +130,4 @@ http://localhost:3000
 **Notes:**
 Trying out semantic release version .
 This is example readme file .
-Trying with patch release
+Trying with major release.
