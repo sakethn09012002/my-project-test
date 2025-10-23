@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/sakethn09012002/my-project-test/compare/v2.1.0...v2.2.0) (2025-10-23)
+
+
+### Features
+
+* change the readme file ([f8fdf85](https://github.com/sakethn09012002/my-project-test/commit/f8fdf8549581b2ebb361adbe466eff9d5611635b))
+
 # [2.1.0](https://github.com/sakethn09012002/my-project-test/compare/v2.0.0...v2.1.0) (2025-10-22)
 
 
